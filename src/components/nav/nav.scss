@@ -1,0 +1,42 @@
+@import '../variables'; 
+
+.nav {
+    &__logo {
+        margin-left: 80.1px;
+        margin-top: 43.56px;
+        width: 236px;
+        height: 26px;
+        cursor: pointer;
+    }
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__list-wrapper ul {
+        margin-top: 50px;
+        margin-right: 80px;
+        display: flex;
+        list-style: none;
+
+    }
+    &__list-item {
+        cursor: pointer;
+        margin-left: 32px;
+        font-family: $barlow;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 15px;
+        /* identical to box height, or 125% */
+
+        letter-spacing: 0.923077px;
+        text-transform: uppercase;
+
+        color: #83888F;
+
+    }
+    &__list-link {
+        text-decoration: none;
+        color: #83888F;
+    }
+}

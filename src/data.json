@@ -1,0 +1,29 @@
+{
+    
+    "create": [
+        
+       
+        {
+            "name": "How do you drink your coffee?",
+            
+            "type": ["Capsudle", "Filter", "Espresso"],
+            "descr": ["Compatible with Nespresso systems and similar brewers", "For pour over or drip methods like Aeropress, Chemex, and V60", "Dense and finely ground beans for an intense, flavorful experience"]
+        }, 
+        {
+            "name": "Howww do you drink your coffee?",
+            
+            "type": ["Capsdsuleee", "Fislter", "Espsdresso"],
+            "descr": ["Compatibdsdle with Nespresso systems and similar brewers", "For pour over or drip methods like Aeropress, Chemex, and V60", "Dense and finely ground beans for an intense, flavorful experience"]
+        },
+        {
+            "name": "Howww do you drink your coffee?",
+            
+            "type": ["Capsusdleee", "Filter", "Espsdsresso"],
+            "descr": ["Compatibdsdle with Nespresso systems and similar brewers", "For pour over or drip methods like Aeropress, Chemex, and V60", "Dense and finely ground beans for an intense, flavorful experience"]
+        }
+        
+       
+
+        
+    ]
+}

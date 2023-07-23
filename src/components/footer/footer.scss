@@ -1,0 +1,51 @@
+@import '../variables'; 
+
+
+.footer {
+   margin-top: 200px;
+    background: #2C343E;
+    height: 110px;
+    &__wrapper {
+        display: flex;
+        
+    }
+    &__logo {
+        width: 236px;
+        height: 26px;
+        cursor: pointer;
+        margin-left: 85px;
+        margin-top: 47px;
+    }
+    &__list-wrapper ul {
+        margin-top: 50px;
+        margin-right: 80px;
+        display: flex;
+        list-style: none;
+    }
+    &__list-item {
+        cursor: pointer;
+        margin-left: 32px;
+        font-family: $barlow;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 15px;
+        /* identical to box height, or 125% */
+
+        letter-spacing: 0.923077px;
+        text-transform: uppercase;
+
+        color: #83888F;
+
+    }
+
+    &__social-list {
+        display: flex;
+        list-style: none;
+        margin-top: 47px;
+        margin-left: 768px;
+    }
+    &__social-item {
+        margin-right: 24px;
+    }
+}
