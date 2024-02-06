@@ -49,7 +49,7 @@ let deliverArr = [
 
 const Plan = () => {
   let [pref, setPref] = useState("_____");
-  let [pref1, setPref1] = useState("_____");
+  let [pref1, setPref1] = useState("");
   let [bean, setBean] = useState("_____");
   let [quant, setQuant] = useState("_____");
   let [grind, setGrind] = useState("_____");
@@ -60,7 +60,7 @@ const Plan = () => {
   let [quantItem, setQuantItem] = useState();
   let [grindItem, setGrindItem] = useState();
   let [deliverItem, setDeliverItem] = useState();
-
+  console.log(pref1);
   let [popup, setPopup] = useState(
     <>
       <div className="popup">
@@ -244,7 +244,10 @@ const Plan = () => {
             <div className="choice__item">
               <div className="choice__item-wrapper">
                 <div className="title__wrapper">
-                  <div className="choice__item-title">
+                  <div
+                    className="choice__item-title"
+                    onClick={() => setPrefItem((prefItem = "active"))}
+                  >
                     How do you drink your coffee?
                   </div>
 
@@ -259,7 +262,7 @@ const Plan = () => {
                   </div>
                 </div>
 
-                <div className="choice__card-list">
+                {/* <div className="choice__card-list">
                   {prefer[0].map((item, index) => {
                     return (
                       <>
@@ -270,7 +273,8 @@ const Plan = () => {
                           onClick={() =>
                             grind !== "_____" && item === "Capsule"
                               ? setPref(pref)
-                              : setPref((pref = item))
+                              : setPref((pref = item)) ||
+                                setPref1((pref1 = true))
                           }
                         >
                           <div className="choice__card-title">
@@ -288,9 +292,8 @@ const Plan = () => {
                         return (
                           <>
                             <div
-                              onClick={() => setPref1((pref1 = value))}
                               className={`choice__card-descr ${
-                                pref1 === value
+                                pref1
                                   ? "choice__card-active"
                                   : "choice__card-descr"
                               }`}
@@ -302,10 +305,54 @@ const Plan = () => {
                       })}
                     </div>
                   </div>
+                </div> */}
+
+                <div className="choice__card-list">
+                  {prefer[0].map((item, index) => (
+                    <div
+                      key={index}
+                      className={`choice__card-item ${prefItem} ${
+                        pref === item && "active__item"
+                      }`}
+                      onClick={() =>
+                        grind !== "_____" && item === "Capsule"
+                          ? setPref(pref)
+                          : (setPref(item), setPref1(true))
+                      }
+                    >
+                      <div className="choice__card-title">
+                        <span>{item}</span>
+                      </div>
+
+                      <div className="test__wrapper">
+                        <div className={`descr__wrapper ${prefItem}`}>
+                          <div
+                            key={index} // Используем индекс для обращения к соответствующему элементу второго массива
+                            className={`choice__card-descr ${
+                              pref === item
+                                ? "choice__card-active"
+                                : "choice__card-descr"
+                            }`}
+                          >
+                            <span>{prefer[1][index]}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
 
                 <div className="title__wrapper">
-                  <div className="choice__item-title">What type of coffee?</div>
+                  <div
+                    className="choice__item-title"
+                    onClick={() =>
+                      pref !== "_____"
+                        ? setBeanItem((beanItem = "active"))
+                        : setBeanItem()
+                    }
+                  >
+                    What type of coffee?
+                  </div>
 
                   <div
                     className={`choice__item-arrow  ${
@@ -317,7 +364,7 @@ const Plan = () => {
                     <img src={arrow} alt="arrow" />
                   </div>
                 </div>
-                <div className="choice__card-list">
+                {/* <div className="choice__card-list">
                   {beanArr[0].map((item, index) => {
                     return (
                       <>
@@ -347,10 +394,47 @@ const Plan = () => {
                       );
                     })}
                   </div>
+                </div> */}
+                <div className="choice__card-list">
+                  {beanArr[0].map((item, index) => (
+                    <div
+                      key={index}
+                      className={`choice__card-item ${beanItem} ${
+                        bean === item && "active__item"
+                      }`}
+                      onClick={() => setBean((bean = item))}
+                    >
+                      <div className="choice__card-title">
+                        <span>{item}</span>
+                      </div>
+
+                      <div className="test__wrapper">
+                        <div className={`descr__wrapper ${beanItem}`}>
+                          <div
+                            key={index} // Используем индекс для обращения к соответствующему элементу второго массива
+                            className={`choice__card-descr ${
+                              bean === item
+                                ? "choice__card-active"
+                                : "choice__card-descr"
+                            }`}
+                          >
+                            <span>{beanArr[1][index]}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
 
                 <div className="title__wrapper">
-                  <div className="choice__item-title">
+                  <div
+                    className="choice__item-title"
+                    onClick={() =>
+                      bean !== "_____"
+                        ? setQuantItem((quantItem = "active"))
+                        : setQuantItem()
+                    }
+                  >
                     How much would you like?
                   </div>
 
@@ -364,7 +448,7 @@ const Plan = () => {
                     <img src={arrow} alt="arrow" />
                   </div>
                 </div>
-                <div className="choice__card-list">
+                {/* <div className="choice__card-list">
                   {quantArr[0].map((item, index) => {
                     return (
                       <>
@@ -394,10 +478,48 @@ const Plan = () => {
                       );
                     })}
                   </div>
+                </div> */}
+
+                <div className="choice__card-list">
+                  {quantArr[0].map((item, index) => (
+                    <div
+                      key={index}
+                      className={`choice__card-item ${quantItem} ${
+                        quant === item && "active__item"
+                      }`}
+                      onClick={() => setQuant((quant = item))}
+                    >
+                      <div className="choice__card-title">
+                        <span>{item}</span>
+                      </div>
+
+                      <div className="test__wrapper">
+                        <div className={`descr__wrapper ${quantItem}`}>
+                          <div
+                            key={index} // Используем индекс для обращения к соответствующему элементу второго массива
+                            className={`choice__card-descr ${
+                              quant === item
+                                ? "choice__card-active"
+                                : "choice__card-descr"
+                            }`}
+                          >
+                            <span>{quantArr[1][index]}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
 
                 <div className="title__wrapper">
-                  <div className="choice__item-title">
+                  <div
+                    className="choice__item-title"
+                    onClick={() =>
+                      pref !== "Capsule" && quant !== "_____"
+                        ? setGrindItem((grindItem = "active"))
+                        : setGrindItem()
+                    }
+                  >
                     Want us to grind them?
                   </div>
 
@@ -430,31 +552,37 @@ const Plan = () => {
                             <div className="choice__card-title">
                               <span>{item}</span>
                             </div>
+
+                            <div className="test__wrapper">
+                              <div className={`descr__wrapper ${grindItem}`}>
+                                <div
+                                  key={index} // Используем индекс для обращения к соответствующему элементу второго массива
+                                  className={`choice__card-descr ${
+                                    grind === item
+                                      ? "choice__card-active"
+                                      : "choice__card-descr"
+                                  }`}
+                                >
+                                  <span>{grindArr[1][index]}</span>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </>
                       );
                     }
                   })}
-                  <div className={` descr__wrapper  ${grindItem}`}>
-                    {grindArr[1].map((value) => {
-                      //foreach try
-                      if (pref === "Capsule") {
-                        return <></>;
-                      } else {
-                        return (
-                          <>
-                            <div className={`choice__card-descr`}>
-                              <span>{value}</span>
-                            </div>
-                          </>
-                        );
-                      }
-                    })}
-                  </div>
                 </div>
 
                 <div className="title__wrapper">
-                  <div className="choice__item-title">
+                  <div
+                    className="choice__item-title"
+                    onClick={() =>
+                      deliver
+                        ? setDeliverItem((deliverItem = "active"))
+                        : setDeliverItem()
+                    }
+                  >
                     How often should we deliver?
                   </div>
 
@@ -481,27 +609,25 @@ const Plan = () => {
                           <div className="choice__card-title">
                             <span>{item}</span>
                           </div>
+
+                          <div className="test__wrapper">
+                            <div className={`descr__wrapper ${deliverItem}`}>
+                              <div
+                                key={index} // Используем индекс для обращения к соответствующему элементу второго массива
+                                className={`choice__card-descr ${
+                                  deliver === item
+                                    ? "choice__card-active"
+                                    : "choice__card-descr"
+                                }`}
+                              >
+                                <span>{deliverArr[1][index]}</span>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </>
                     );
                   })}
-                  <div className={` descr__wrapper  ${deliverItem}`}>
-                    {deliverArr[1].map((value) => {
-                      //foreach try
-
-                      return (
-                        <>
-                          <div
-                            className={`choice__card-descr  ${
-                              value ? "active" : "choice__card-descr"
-                            }`}
-                          >
-                            <span>{value}</span>
-                          </div>
-                        </>
-                      );
-                    })}
-                  </div>
                 </div>
                 <div className="order">
                   <div className="order__sum">Order Summary</div>
