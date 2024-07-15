@@ -3,7 +3,7 @@
   position: relative;
   &__hero {
     background-image: url("../../assets/plan/desktop/image-hero-blackcup.jpg");
-
+    border-radius: 20px;
     height: 450px;
     width: 1280px;
     margin: 0 auto;
@@ -79,15 +79,70 @@
     font-size: 24px;
     line-height: 32px;
     /* identical to box height, or 133% */
-
+    margin-bottom: 24px;
     cursor: pointer;
     color: #83888f;
+  }
+
+  &__list-item span {
+    color: #83888f !important;
+    margin-right: 28.5px;
   }
 }
 
 // .choice__item-arrow {
 //     transform: rotate(180deg);
 // }
+
+.planw {
+  width: 100%;
+  &__wrapper {
+    width: 90%;
+    justify-content: start;
+    margin-left: 73px;
+  }
+  &__button-wrapper {
+    margin-left: 60px;
+  }
+  &__title {
+    margin-left: 0px;
+  }
+
+  &__hr {
+    width: 233.5px;
+    margin-left: 74px;
+    &-wrapper {
+      margin-left: 271px;
+    }
+  }
+
+  &__circle {
+    margin-left: 39px;
+
+    &-third {
+      margin-left: 310px;
+    }
+  }
+
+  &__cart {
+    width: 223px;
+    margin: 0;
+    &-descr {
+      width: 190px;
+      height: 155px;
+      font-size: 15px;
+      margin-left: -11px;
+    }
+
+    &-title {
+      margin-left: -7px;
+    }
+
+    &-number {
+      margin-left: -150px;
+    }
+  }
+}
 
 .choice {
   &__item-title {
@@ -112,6 +167,7 @@
     display: flex;
     margin-left: 125px;
     margin-top: 56px;
+    margin-bottom: 88px;
   }
 
   &__card-item {
@@ -156,6 +212,10 @@
     color: #333d4b;
     margin-right: 80px;
   }
+}
+.choice__card-title span {
+  display: block;
+  width: 200px;
 }
 
 .active__item {
@@ -266,8 +326,10 @@
 }
 
 .popup {
+  position: absolute;
   display: none;
   margin: 0 auto;
+
   &__order {
     border-radius: 8px 8px 0px 0px;
     background: #333d4b;
@@ -322,7 +384,7 @@
     margin-top: 47px;
     border-radius: 6px;
     border: none;
-    background: #66d2cf;
+    background: rgb(14, 135, 132);
     cursor: pointer;
 
     color: #fefcf7;
@@ -351,6 +413,17 @@
   display: block;
 }
 
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный цвет */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .test__wrapper {
   width: 1440px;
   margin: 0 auto;
@@ -360,4 +433,66 @@
 
 .choice__card-descr {
   margin-right: 30px;
+}
+
+.choice__item-title {
+  margin-top: 24px;
+}
+
+.choice__item-arrow {
+  margin-top: 40px;
+}
+
+@media (max-width: 1290px) {
+  .plan {
+    width: 100%;
+    &__works {
+      width: 100%;
+    }
+    &__hero {
+      width: 90%;
+
+      background-image: url("../../assets/plan/tablet/image-hero-blackcup.jpg");
+      background-position: right;
+    }
+  }
+
+  .create__list {
+    display: none;
+  }
+
+  .choice {
+    &__item {
+      &-title {
+        font-size: 32px;
+        margin-left: 39px;
+      }
+    }
+    &__card {
+      &-list {
+        margin-left: 39px;
+      }
+
+      &-item {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .order {
+    width: 90%;
+    margin-left: 39px;
+
+    &__descr {
+      margin-left: 58px;
+    }
+
+    &__sum {
+      margin-left: 32px;
+    }
+
+    &__button {
+      margin-right: 0px;
+    }
+  }
 }

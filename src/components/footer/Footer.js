@@ -9,14 +9,16 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="footer__wrapper">
-        <img src={logo} alt="logo" className="footer__logo" />
+        <div className="footer__logo-wrapper">
+          <img src={logo} alt="logo" className="footer__logo" />
 
-        <div className="footer__list-wrapper">
-          <ul>
-            <li className="footer__list-item">Home</li>
-            <li className="footer__list-item">About us</li>
-            <li className="footer__list-item">Create your plan</li>
-          </ul>
+          <div className="footer__list-wrapper">
+            <ul>
+              <li className="footer__list-item">Home</li>
+              <li className="footer__list-item">About us</li>
+              <li className="footer__list-item">Create your plan</li>
+            </ul>
+          </div>
         </div>
 
         <ul className="footer__social-list">

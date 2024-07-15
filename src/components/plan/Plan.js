@@ -60,35 +60,13 @@ const Plan = () => {
   let [quantItem, setQuantItem] = useState();
   let [grindItem, setGrindItem] = useState();
   let [deliverItem, setDeliverItem] = useState();
+
   console.log(pref1);
-  let [popup, setPopup] = useState(
-    <>
-      <div className="popup">
-        <div className="popup__order">
-          <span>Order Summary</span>
-        </div>
+  let [popup, setPopup] = useState(null);
 
-        <div className="popup__descr">
-          I drink my coffee as <span>{pref ? pref : "_____"}</span>, with a{" "}
-          <span>{bean ? bean : "_____"}</span> type of bean.
-          <span>{quant ? quant : "_____"}</span> ground ala{" "}
-          <span>{grind ? grind : "_____"}</span>, sent to me{" "}
-          <span>{deliver ? deliver : "_____"}</span>.
-        </div>
-
-        <div className="popup__verif">
-          Is this correct? You can proceed to checkout or go back to plan
-          selection if something is off. Subscription discount codes can also be
-          redeemed at the checkout.
-        </div>
-
-        <div className="popup__sum-wrapper">
-          <div className="popup__sum">$14.00 / mo</div>
-          <button className="popup__sum-btn">Checkout</button>
-        </div>
-      </div>
-    </>
-  );
+  const closePopup = () => {
+    setPopup(null);
+  };
 
   return (
     <div className="plan">
@@ -157,7 +135,6 @@ const Plan = () => {
           </div>
         </div>
       </div>
-
       <div className="create">
         <div className="create__wrapper">
           <div className="create__list">
@@ -513,7 +490,13 @@ const Plan = () => {
 
                 <div className="title__wrapper">
                   <div
-                    className="choice__item-title"
+                    className={`choice__item-title ${
+                      grindItem && pref !== "Capsule" && quant !== "_____"
+                        ? "choice__item-title"
+                        : "choice__item-title" && pref === "Capsule"
+                        ? "banned__list"
+                        : "choice__item-title"
+                    }`}
                     onClick={() =>
                       pref !== "Capsule" && quant !== "_____"
                         ? setGrindItem((grindItem = "active"))
@@ -639,6 +622,7 @@ const Plan = () => {
                     <span>{deliver ? deliver : "_____"}</span>.
                   </div>
                 </div>
+
                 <button
                   className={`order__button ${
                     pref && bean && quant && grind && deliver !== "_____"
@@ -647,43 +631,54 @@ const Plan = () => {
                   }`}
                   onClick={() => {
                     if (pref && bean && quant && grind && deliver !== "_____") {
-                      console.log("done");
-                      setPopup(
-                        (popup = (
-                          <>
-                            <div className="popup popup__open">
-                              <div className="popup__order">
-                                <span>Order Summary</span>
-                              </div>
+                      window.scrollTo({
+                        top: 0,
+                        behavior: "smooth", // Плавная прокрутка
+                      }) ||
+                        setPopup(
+                          (popup = (
+                            <>
+                              <div className="modal-overlay">
+                                <div className="popup popup__open">
+                                  <div className="popup__order">
+                                    <span>Order Summary</span>
+                                  </div>
 
-                              <div className="popup__descr">
-                                I drink my coffee as{" "}
-                                <span>{pref ? pref : "_____"}</span>, with a{" "}
-                                <span>{bean ? bean : "_____"}</span> type of
-                                bean.
-                                <span>{quant ? quant : "_____"}</span> ground
-                                ala <span>{grind ? grind : "_____"}</span>, sent
-                                to me <span>{deliver ? deliver : "_____"}</span>
-                                .
-                              </div>
+                                  <div className="popup__descr">
+                                    I drink my coffee as{" "}
+                                    <span>{pref ? pref : "_____"}</span>, with a{" "}
+                                    <span>{bean ? bean : "_____"}</span> type of
+                                    bean.
+                                    <span>{quant ? quant : "_____"}</span>{" "}
+                                    ground ala{" "}
+                                    <span>{grind ? grind : "_____"}</span>, sent
+                                    to me{" "}
+                                    <span>{deliver ? deliver : "_____"}</span>.
+                                  </div>
 
-                              <div className="popup__verif">
-                                Is this correct? You can proceed to checkout or
-                                go back to plan selection if something is off.
-                                Subscription discount codes can also be redeemed
-                                at the checkout.
-                              </div>
+                                  <div className="popup__verif">
+                                    Is this correct? You can proceed to checkout
+                                    or go back to plan selection if something is
+                                    off. Subscription discount codes can also be
+                                    redeemed at the checkout.
+                                  </div>
 
-                              <div className="popup__sum-wrapper">
-                                <div className="popup__sum">$14.00 / mo</div>
-                                <button className="popup__sum-btn">
-                                  Checkout
-                                </button>
+                                  <div className="popup__sum-wrapper">
+                                    <div className="popup__sum">
+                                      $14.00 / mo
+                                    </div>
+                                    <button
+                                      onClick={closePopup}
+                                      className="popup__sum-btn"
+                                    >
+                                      Checkout
+                                    </button>
+                                  </div>
+                                </div>
                               </div>
-                            </div>
-                          </>
-                        ))
-                      );
+                            </>
+                          ))
+                        );
                     } else {
                       console.log("fail");
                     }

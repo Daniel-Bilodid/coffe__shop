@@ -5,13 +5,18 @@ import quality from "../../assets/about/desktop/image-quality.jpg";
 import uk from "../../assets/about/desktop/illustration-uk.svg";
 import canada from "../../assets/about/desktop/illustration-canada.svg";
 import australia from "../../assets/about/desktop/illustration-australia.svg";
+import coffeMakerTablet from "../../assets/about/tablet/image-commitment.jpg";
+import qualityTablet from "../../assets/about/tablet/image-quality.jpg";
+
+import heroMobile from "../../assets/about/tablet/image-hero-whitecup.jpg";
 import "./about.scss";
 
 const About = () => {
   return (
     <div className="about">
       <div className="about__hero">
-        <img src={hero} alt="hero" />
+        <img className="hero" src={hero} alt="hero" />
+        <img className="hero__mobile" src={heroMobile} alt="heroMobile" />
       </div>
       <div className="about__hero-wrapper">
         <div className="about__hero-title">About Us</div>
@@ -25,7 +30,12 @@ const About = () => {
       </div>
 
       <div className="about__descr">
-        <img src={coffeMaker} alt="coffeMaker" />
+        <img className="coffe__maker" src={coffeMaker} alt="coffeMaker" />
+        <img
+          className="coffe__maker-tablet"
+          src={coffeMakerTablet}
+          alt="coffeMakerTablet"
+        />
 
         <div className="about__descr-wrapper">
           <div className="about__descr-title">Our commitment</div>
@@ -61,7 +71,12 @@ const About = () => {
             </div>
           </div>
           <div className="quality__img">
-            <img src={quality} alt="quality" />
+            <img className="quality__desck" src={quality} alt="quality" />
+            <img
+              className="quality__tablet"
+              src={qualityTablet}
+              alt="qualitytablet"
+            />
           </div>
         </div>
       </div>

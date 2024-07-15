@@ -1,208 +1,281 @@
-@import '../variables';
+@import "../variables";
 
 .about {
-    width: 1280px;
-    height: 2500px;
+  max-width: 1280px;
+  height: 2500px;
+  margin: 0 auto;
+  margin-top: 43.44px;
+
+  &__hero-title {
+    width: 190px;
+    height: 48px;
+    margin-left: 85px;
+    margin-bottom: 24px;
+    font-family: $fraunces;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 48px;
+    /* identical to box height, or 120% */
+
+    color: #fefcf7;
+  }
+
+  &__hero-descr {
+    width: 445px;
+    height: 104px;
+    margin-left: 85px;
+    font-family: $barlow;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    /* or 162% */
+
+    text-align: left;
+    color: #fefcf7;
+  }
+
+  &__hero-wrapper {
+    margin-top: -300px;
+  }
+
+  &__descr {
+    display: flex;
+    width: 1110px;
+
     margin: 0 auto;
-    margin-top: 43.44px;
 
-    &__hero-title {
-        width: 190px;
-        height: 48px;
-        margin-left: 85px;
-        margin-bottom: 24px;
-        font-family: $fraunces;
-        font-style: normal;
-        font-weight: 900;
-        font-size: 40px;
-        line-height: 48px;
-        /* identical to box height, or 120% */
+    &-title {
+      margin-left: 110px;
+      width: 377px;
+      height: 68px;
+      margin-top: 395px;
 
+      font-family: $fraunces;
+      font-style: normal;
+      font-weight: 900;
+      font-size: 40px;
+      line-height: 48px;
+      /* identical to box height, or 120% */
 
-        color: #FEFCF7;
-
+      color: #333d4b;
     }
 
-    &__hero-descr {
-        width: 445px;
-        height: 104px;
-        margin-left: 85px;
-        font-family: $barlow;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 26px;
-        /* or 162% */
+    &-text {
+      width: 540px;
+      height: 260px;
+      margin-left: 125px;
+      font-family: $barlow;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 26px;
+      /* or 162% */
 
-        text-align: left;
-        color: #FEFCF7;
+      text-align: left;
+      color: #333d4b;
 
+      mix-blend-mode: normal;
+      opacity: 0.8;
     }
+  }
 
-    &__hero-wrapper {
-        margin-top: -300px;
-    }
-
-    &__descr {
-        display: flex;
-        width: 1110px;
-       
-        margin: 0 auto;
-        
-        &-title {
-            margin-left: 110px;
-            width: 377px;
-            height: 68px;
-            margin-top: 395px;
-
-            font-family: $fraunces;
-            font-style: normal;
-            font-weight: 900;
-            font-size: 40px;
-            line-height: 48px;
-            /* identical to box height, or 120% */
-
-
-            color: #333D4B;
-        }
-
-        &-text {
-            width: 540px;
-            height: 260px;
-            margin-left: 125px;
-            font-family: $barlow;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 26px;
-            /* or 162% */
-
-            text-align: left;
-            color: #333D4B;
-
-            mix-blend-mode: normal;
-            opacity: 0.8;
-        }
-    }
-
-    &__descr img {
-        margin-top: 305px;
-    }
+  &__descr img {
+    margin-top: 305px;
+  }
 }
 
 .quality {
-    background: #2C343E;
-   
+  background: #2c343e;
+
+  border-radius: 10px;
+  width: 1280px;
+  height: 474px;
+  margin: 0 auto;
+  margin-top: 256px;
+  &__wrapper {
+    display: flex;
+  }
+  &__img {
+    margin-top: -88px;
+    margin-right: 85px;
+  }
+  &__img img {
     border-radius: 10px;
-    width: 1280px;
-    height: 474px;
-    margin: 0 auto;
-    margin-top: 256px;
-    &__wrapper {
-        display: flex;
-    }
-    &__img {
-        
-        margin-top: -88px;
-        margin-right: 85px;
-    }
-    &__img img {
-        border-radius: 10px;
-    }
-    &__text {
-        width: 522px;
-        height: 48px;
-        margin-top: 88px;
-        margin-left: 85px;
-        margin-bottom: 32px;
-        
-        font-family: $fraunces;
-        font-style: normal;
-        font-weight: 900;
-        font-size: 40px;
-        line-height: 48px;
-        /* identical to box height, or 120% */
+  }
+  &__text {
+    width: 522px;
+    height: 48px;
+    margin-top: 88px;
+    margin-left: 85px;
+    margin-bottom: 32px;
 
+    font-family: $fraunces;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 48px;
+    /* identical to box height, or 120% */
 
-        color: #FEFCF7;
+    color: #fefcf7;
+  }
+  &__descr {
+    width: 540px;
+    height: 130px;
+    font-family: $barlow;
+    text-align: left;
+    margin-left: 85px;
+    margin-right: 125px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    /* or 162% */
 
-    }
-    &__descr {
-        width: 540px;
-        height: 130px;
-        font-family: $barlow;
-        text-align: left;
-        margin-left: 85px;
-        margin-right: 125px;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 26px;
-        /* or 162% */
-
-
-        color: #FEFCF7;
-    }
-
+    color: #fefcf7;
+  }
 }
 
 .contacts {
-    width: 1045px;
+  width: 1045px;
 
-    &__title {
-       display: flex;
-       margin-top: 168px;
-       margin-left: 85px;
+  &__img {
+    width: 100%;
+    display: flex;
+  }
 
-       font-family: $fraunces;
+  &__title {
+    display: flex;
+    margin-top: 168px;
+    margin-left: 85px;
+
+    font-family: $fraunces;
     font-style: normal;
     font-weight: 900;
     font-size: 24px;
     line-height: 32px;
     /* identical to box height, or 133% */
 
+    color: #83888f;
+  }
 
-    color: #83888F;
+  &__wrapper {
+    margin-left: 82px;
+    margin-top: 72px;
+    display: flex;
+    justify-content: space-between;
+  }
 
+  &__card {
+    &-title {
+      width: 100%;
+      display: flex;
+      margin-top: 45.93px;
+      font-family: $fraunces;
+      font-style: normal;
+      font-weight: 900;
+      font-size: 32px;
+      line-height: 36px;
+      /* identical to box height, or 112% */
+
+      color: #333d4b;
     }
+    &-info {
+      font-family: $barlow;
+      text-align: left;
+      margin-top: 24px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 26px;
+      /* or 162% */
 
-    &__wrapper {
-        margin-left: 82px;
-        margin-top: 72px;
-        display: flex;
-        justify-content: space-between;
+      color: #333d4b;
     }
-
-    &__card {
-        
-        &-title {
-            margin-top: 45.93px;
-            font-family: $fraunces;
-            font-style: normal;
-            font-weight: 900;
-            font-size: 32px;
-            line-height: 36px;
-            /* identical to box height, or 112% */
-
-
-            color: #333D4B;
-        }
-        &-info {
-            font-family: $barlow;
-            text-align: left;
-            margin-top: 24px;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 26px;
-            /* or 162% */
-
-
-            color: #333D4B;
-        }
-    }
+  }
 }
 
 .dif__card {
-    margin-right: -60px;
+  margin-right: -60px;
+}
+
+.coffe__maker-tablet {
+  display: none;
+}
+
+.hero__mobile {
+  display: none;
+}
+
+.quality__tablet {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .about {
+    height: 100%;
+    &__descr {
+      width: 90%;
+      &-title {
+        margin-left: 20px;
+        font-size: 32px;
+      }
+      &-text {
+        margin-left: 69px;
+        width: 339px;
+        height: 350px;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 25px;
+        letter-spacing: 0px;
+        text-align: left;
+      }
+    }
+  }
+  .hero {
+    display: none;
+    &__mobile {
+      display: block;
+      width: 90%;
+      margin: 0 auto;
+      height: 100%;
+    }
+  }
+
+  .coffe__maker-tablet {
+    display: block;
+  }
+
+  .coffe__maker {
+    display: none;
+  }
+
+  .quality__tablet {
+    display: block;
+    margin-left: 58px;
+    margin-top: -74px;
+  }
+  .quality__desck {
+    display: none;
+  }
+
+  .quality {
+    width: 90%;
+    &__wrapper {
+      flex-direction: column-reverse;
+    }
+    &__text {
+      margin-top: 50px;
+    }
+  }
+  .contacts {
+    width: 90%;
+
+    &__card {
+      &-title {
+        font-size: 24px;
+      }
+    }
+  }
 }

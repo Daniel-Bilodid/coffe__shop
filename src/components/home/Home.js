@@ -33,81 +33,109 @@ const Home = () => {
         <div className="home__collection">
           <img src={collection} alt="collection" />
         </div>
-        <ul className="home__coffe-list">
-          <li className="home__coffe-item">
+        <div className="home__coffe-list">
+          <div className="home__coffe-item">
             <img src={gran} alt="gran" />
-            <div className="home__coffe-name">Gran Espresso</div>
-            <div className="home__coffe-descr">
-              Light and flavorful blend with cocoa and black pepper for an
-              intense experience.
+            <div className="home__coffe-text">
+              <div className="home__coffe-name">Gran Espresso</div>
+              <div className="home__coffe-descr">
+                Light and flavorful blend with cocoa and black pepper for an
+                intense experience.
+              </div>
             </div>
-          </li>
-          <li className="home__coffe-item">
-            <img src={planalto} alt="planalto" />
-            <div className="home__coffe-name">Planalto</div>
-            <div className="home__coffe-descr">
-              Brazilian dark roast with rich and velvety body, and hints of
-              fruits and nuts.
+          </div>
+
+          <div className="home__coffe-item">
+            <img src={planalto} alt="planato" />
+            <div className="home__coffe-text">
+              <div className="home__coffe-name">Planalto</div>
+              <div className="home__coffe-descr">
+                Brazilian dark roast with rich and velvety body, and hints of
+                fruits and nuts.
+              </div>
             </div>
-          </li>
-          <li className="home__coffe-item">
+          </div>
+
+          <div className="home__coffe-item">
             <img src={picollo} alt="picollo" />
-            <div className="home__coffe-name">Piccollo</div>
-            <div className="home__coffe-descr">
-              Mild and smooth blend featuring notes of toasted almond and dried
-              cherry.
+            <div className="home__coffe-text">
+              <div className="home__coffe-name">Piccollo</div>
+              <div className="home__coffe-descr">
+                Mild and smooth blend featuring notes of toasted almond and
+                dried cherry.
+              </div>
             </div>
-          </li>
-          <li className="home__coffe-item">
+          </div>
+
+          <div className="home__coffe-item">
             <img src={danche} alt="danche" />
-            <div className="home__coffe-name">Danche</div>
-            <div className="home__coffe-descr">
-              Ethiopian hand-harvested blend densely packed with vibrant fruit
-              notes.
+            <div className="home__coffe-text">
+              <div className="home__coffe-name">Danche</div>
+              <div className="home__coffe-descr">
+                Ethiopian hand-harvested blend densely packed with vibrant fruit
+                notes.
+              </div>
             </div>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
 
       <div className="choose">
-        <div className="choose__title">Why choose us?</div>
-        <div className="choose__descr">
-          A large part of our role is choosing which particular coffees will be
-          featured in our range. This means working closely with the best coffee
-          growers to give you a more impactful experience on every level.
-        </div>
-
-        <div className="choose__cart-wrapper">
-          <div className="choose__cart">
-            <div className="choose__cart-img"></div>
-            <img src={coffeBean} alt="coffeBean" />
-            <div className="choose__cart-title">Best quality</div>
-
-            <div className="choose__cart-descr">
-              Discover an endless variety of the world’s best artisan coffee
-              from each of our roasters.
-            </div>
+        <div className="choose__container">
+          <div className="choose__title">Why choose us?</div>
+          <div className="choose__descr">
+            A large part of our role is choosing which particular coffees will
+            be featured in our range. This means working closely with the best
+            coffee growers to give you a more impactful experience on every
+            level.
           </div>
 
-          <div className="choose__cart">
-            <div className="choose__cart-img"></div>
-            <img src={gift} alt="gift" />
-            <div className="choose__cart-title">Exclusive benefits</div>
+          <div className="choose__cart-wrapper">
+            <div className="choose__cart">
+              <div className="choose__cart-img">
+                <img src={coffeBean} alt="coffeBean" />
+              </div>
 
-            <div className="choose__cart-descr">
-              Special offers and swag when you subscribe, including 30% off your
-              first shipment.
+              <div className="choose__cart-text">
+                <div className="choose__cart-title">Best quality</div>
+
+                <div className="choose__cart-descr">
+                  Discover an endless variety of the world’s best artisan coffee
+                  from each of our roasters.
+                </div>
+              </div>
             </div>
-          </div>
 
-          <div className="choose__cart">
-            <div className="choose__cart-img dif"></div>
-            <img src={truck} alt="truck" />
-            <div className="choose__cart-title dif-title">Free shipping</div>
+            <div className="choose__cart">
+              <div className="choose__cart-img">
+                {" "}
+                <img src={gift} alt="gift" />
+              </div>
+              <div className="choose__cart-text">
+                {" "}
+                <div className="choose__cart-title">Exclusive benefits</div>
+                <div className="choose__cart-descr">
+                  Special offers and swag when you subscribe, including 30% off
+                  your first shipment.
+                </div>
+              </div>
+            </div>
 
-            <div className="choose__cart-descr ">
-              We cover the cost and coffee is delivered fast. Peak freshness:
-              guaranteed.
+            <div className="choose__cart">
+              <div className="choose__cart-img dif">
+                {" "}
+                <img src={truck} alt="truck" />
+              </div>
+              <div className="choose__cart-text">
+                <div className="choose__cart-title dif-title">
+                  Free shipping
+                </div>
+
+                <div className="choose__cart-descr ">
+                  We cover the cost and coffee is delivered fast. Peak
+                  freshness: guaranteed.
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -164,9 +192,11 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <button className="works__button">
-          <span>Create your plan</span>
-        </button>
+        <div className="works__button-wrapper">
+          <button className="works__button">
+            <span>Create your plan</span>
+          </button>
+        </div>
       </div>
     </div>
   );
