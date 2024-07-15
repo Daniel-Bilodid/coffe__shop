@@ -167,7 +167,6 @@
     display: flex;
     margin-left: 125px;
     margin-top: 56px;
-    margin-bottom: 88px;
   }
 
   &__card-item {
@@ -493,6 +492,15 @@
 
     &__button {
       margin-right: 0px;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .plan {
+    &__works {
+      height: unset;
+      padding-bottom: 80px;
     }
   }
 }

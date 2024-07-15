@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import arrow from "../../assets/plan/desktop/icon-arrow.svg";
 import "./plan.scss";
+import { motion } from "framer-motion";
 
 let prefer = [
   ["Capsule", "Filter", "Espresso"],
@@ -61,11 +62,31 @@ const Plan = () => {
   let [grindItem, setGrindItem] = useState();
   let [deliverItem, setDeliverItem] = useState();
 
-  console.log(pref1);
   let [popup, setPopup] = useState(null);
 
   const closePopup = () => {
     setPopup(null);
+    setPrefItem();
+    setBeanItem();
+    setQuantItem();
+    setGrindItem();
+    setDeliverItem();
+
+    setPref("_____");
+    setBean("_____");
+    setQuant("_____");
+    setGrind("_____");
+    setDeliver("_____");
+  };
+
+  const listVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
   };
 
   return (
@@ -633,7 +654,7 @@ const Plan = () => {
                     if (pref && bean && quant && grind && deliver !== "_____") {
                       window.scrollTo({
                         top: 0,
-                        behavior: "smooth", // Плавная прокрутка
+                        behavior: "smooth",
                       }) ||
                         setPopup(
                           (popup = (
